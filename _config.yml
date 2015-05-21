@@ -61,3 +61,19 @@ exclude:
 sass:
     sass_dir: assets/css/_sass
     style: :compressed
+
+# Custom rake file configs
+post:
+  template: _post.txt
+  extension: md
+page:
+  template: _page.txt
+  extension: md
+editor: gvim
+git:
+  branch: master
+transfer:
+  command: rsync
+  settings: -av
+  source: _site/
+  destination: ~/Git/username.github.com/
