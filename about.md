@@ -16,7 +16,7 @@ for [Scikit-image open source image processing library][skimage] in implementing
 Find me on [Github][github].
 
 
-[gsoc] https://www.google-melange.com/gsoc/homepage/google/gsoc2015
-[skimage] http://scikit-image.org/docs/dev/api/skimage.html
+[gsoc]: https://www.google-melange.com/gsoc/homepage/google/gsoc2015
+[skimage]: http://scikit-image.org/docs/dev/api/skimage.html
 [github]: https://github.com/warmspringwidnds
 
