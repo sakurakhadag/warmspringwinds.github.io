@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Sample post from harmony"
+title:  "Sample tess"
 date:   2014-08-19 23:56:45
 description: Just a sample post to show some of the typography elements supported from harmony theme.
 categories:
@@ -32,6 +32,10 @@ end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
+
+$$
+P(\mathbf{Y} = \mathbf{y}|\mathbf{X}) = exp[{\theta } ^{T} g(\mathbf{y},\mathbf{X})]/k(\theta )
+$$
 
 
 A list: 
