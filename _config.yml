@@ -13,7 +13,7 @@ url: http://warmspringwinds.github.io
 harmony:
   name: Daniil's blog
   # Little description about your site
-  description: Blog about Machine Learning and Computer Vision.
+  description: Machine Learning and Computer Vision artisan.
   # 'meta_description:' Write an awesome description for your new site here.
   # It will appear in your document head meta (for Google search results) and 
   # in your feed.xml site description.
@@ -38,7 +38,7 @@ harmony:
     dribble:
     pinterest: 
   # Toggle disclaimer in footer
-  show_disclaimer: true
+  show_disclaimer: false
 
 # Conversion / Build settings 
 markdown:    kramdown
