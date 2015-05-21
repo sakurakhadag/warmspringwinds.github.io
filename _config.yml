@@ -76,4 +76,3 @@ transfer:
   command: rsync
   settings: -av
   source: _site/
-  destination: ~/Git/username.github.com/

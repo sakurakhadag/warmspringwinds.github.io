@@ -5,3 +5,10 @@ description: A small introduction to logistic regression classification algorith
 categories:
 - machine_learning
 ---
+
+
+We will see only this
+
+___
+
+and not this
