@@ -79,7 +79,7 @@ Where:
 
 $$a_j(\textbf{x}) = ln\left( p(\textbf{x}|C_j)p(C_j)\right)$$
 
-The function [$$\ref{logistic}$$] is called **logistic function** and function [$$\ref{softmax}$$]
+The function $$\ref{logistic}$$ is called **logistic function** and function $$\ref{softmax}$$
 is called **softmax function**.
 
 [bayes wikipedia link]: http://en.wikipedia.org/wiki/Bayes%27_theorem
