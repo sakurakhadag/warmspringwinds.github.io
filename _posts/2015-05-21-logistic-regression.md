@@ -2,6 +2,7 @@
 layout: post
 title: "Logistic Regression"
 description: A small introduction to logistic regression classification algorithm.
+comments: true
 categories:
 - machine_learning
 ---

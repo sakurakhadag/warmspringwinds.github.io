@@ -2,6 +2,7 @@
 layout: post
 title: "Google Summer of Code: patent-free Face Detection for Scikit-image in Python. Introduction"
 description:
+comments: true
 categories:
 - gsoc
 - face_detection
