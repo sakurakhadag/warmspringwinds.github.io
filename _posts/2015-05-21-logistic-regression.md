@@ -7,6 +7,7 @@ categories:
 ---
 
 A small introduction to logistic regression classification algorithm.
+
 ___
 
 Logistic regression is a discriminative classification model.
