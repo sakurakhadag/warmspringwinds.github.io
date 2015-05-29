@@ -14,16 +14,17 @@ ___
 
 ## The selected API
 
-The way [API][opencv_api] of the function was taken from OpenCv style.
-This was done in order to allow users to use OpenCv for training their object detector
-and connect it later to Scikit-Image.
+The [API][opencv_api] of the function was taken from OpenCv.
+It was done in order to allow users to use OpenCv for training their object detector
+and connect it later to `Scikit-Image`.
 The training part will also be implemented for Scikit-Image.
 This step will just allow users to be more flexible and also by doing this Scikit-Image
 Face detection Framework will be tested on much earlier stage.
 
-This is the description of MB-LBP that OpenCv uses:
+This is the visual description of MB-LBP that OpenCv uses:
 
 ![Cascade of classifiers]({{ site.url }}/assets/img/opencv_mblbp_api.png)
+
 
 ## Implemented functions
 
@@ -43,4 +44,13 @@ the central one.
 ![Cascade of classifiers]({{ site.url }}/assets/img/mblbp_vis_coins.png)
 ![Cascade of classifiers]({{ site.url }}/assets/img/mblbp_vis_test.png)
 
+## Future plans
+
+The next stage will be to implement the same thing using `Cython`.
+
+## Code
+
+The code of functions can be found [here][branch_link].
+
 [opencv_api]: http://stackoverflow.com/questions/22565531/understanding-opencv-lbp-implementation
+[branch_link]: https://github.com/warmspringwinds/scikit-image/blob/mb-lbp/skimage/feature/texture.py#L300
