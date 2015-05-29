@@ -51,6 +51,8 @@ The next stage will be to implement the same thing using `Cython`.
 ## Code
 
 The code of functions can be found [here][branch_link].
+The code that was used for generating images in the post is [here][blog_images_gist].
 
 [opencv_api]: http://stackoverflow.com/questions/22565531/understanding-opencv-lbp-implementation
 [branch_link]: https://github.com/warmspringwinds/scikit-image/blob/mb-lbp/skimage/feature/texture.py#L300
+[blog_images_gist]: https://gist.github.com/warmspringwinds/0394bbc39380ebd3c90d
