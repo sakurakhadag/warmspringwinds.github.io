@@ -35,7 +35,7 @@ For this part two function were implemented:
    
 2. Function that takes the computed `MB-LBP` feature and visualizes it on the selected image.
 
-## Visualization demonstration
+## MB-LBP visualization
 
 The hatched regions show the rectangles that has less summed intensity value than
 the central one.
