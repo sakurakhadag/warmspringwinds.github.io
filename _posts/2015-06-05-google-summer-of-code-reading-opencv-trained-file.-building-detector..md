@@ -30,8 +30,8 @@ first stages of the classifier.
 
 I also implemented an naive sliding window and scale search.
 
-Because the classifier trained only for `24x24` window size we have to scale
-the image and also slide the window to find a face. To fire the face should fit
+Because the classifier trained only for `24x24` window size we, have to scale
+the image and also slide the window to find a face. To fire, the face should fit
 into the `24x24` window.
 
 This is an example. I started with `(118, 118)` image with a face.
@@ -41,7 +41,7 @@ On this scale classifier didn't detect any faces which is correct.
 
 Then, the program scaled the image by the ratio of `0.5` (size `(59, 59)`) and detected one
 image. Actually it's a part of the face and we don't want detection like this,
-but it can be overcomed by using `pruning` technique.
+but it can be overcome by using `pruning` technique.
 
 ![Cascade of classifiers]({{ site.url }}/assets/img/1.png)
 
