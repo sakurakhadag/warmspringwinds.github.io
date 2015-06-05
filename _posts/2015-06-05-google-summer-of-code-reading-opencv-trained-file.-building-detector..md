@@ -49,3 +49,11 @@ Then the the images was downscaled once again and this is where the face was fou
 Once again, this big amount of detections of the same face can be removed by `pruning`.
 
 ![Cascade of classifiers]({{ site.url }}/assets/img/2.png)
+
+## The code.
+
+This is the temporary code and its only purpose was to make sure that the classifier works.
+It will be optimized in the following stages.
+
+[Detector](https://gist.github.com/warmspringwinds/516772c7ddedf5b579b9)
+[Cascade and sliding window](https://gist.github.com/warmspringwinds/bc2b9ddbf2c030ba83d4)
