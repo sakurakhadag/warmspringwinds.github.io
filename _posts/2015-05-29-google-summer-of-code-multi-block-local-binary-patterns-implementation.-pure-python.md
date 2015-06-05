@@ -2,6 +2,7 @@
 layout: post
 title: "Google Summer of Code: Multi-Block Local Binary patterns implementation. Pure Python"
 description:
+comments: true
 categories:
 - gsoc
 ---
