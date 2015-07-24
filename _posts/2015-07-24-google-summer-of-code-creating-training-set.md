@@ -43,3 +43,32 @@ Have a look at the aligned faces:
 ![Aligned face one]({{ site.url }}/assets/img/aligned_face_one.jpg)
 ![Aligned face two]({{ site.url }}/assets/img/aligned_face_two.jpg)
 ![Aligned face three]({{ site.url }}/assets/img/aligned_face_three.jpg)
+
+As you see the amount of area is consistent across images. The next stage is to transform them
+in order to augment our dataset. For this purpose we will use `OpenCv` [create_samples utility](http://docs.opencv.org/doc/user_guide/ug_traincascade.html). This utility takes all the images and creates new
+images by randomly transforming the images and changing the intensity in a specified manner. For my purposes I have chosen the following parameters `-maxxangle 0.5 -maxyangle 0.5 -maxzangle 0.3 -maxidev 40`. The angles specify the maximum rotation angles in `3d` and the `maxidev` specifies the maximum deviation in the intesity changes. This script also puts images on the specified by user background.
+
+This process is really complicated if you want to extract images in the end and not the `.vec` file
+format of the `OpenCv`.
+
+This is a small description on how to do it:
+
+1. Run the bash command `find ./positive_images -iname "*.jpg" > positives.txt` to get a list of
+   positive examples. `positive_images` is a folder with positive examples.
+2. Same for the negative `find ./negative_images -iname "*.jpg" > negatives.txt`.
+3. Run the `createtrainsamples.pl` file like this 
+   `perl createtrainsamples.pl positives.txt negatives.txt vec_storage_tmp_dir`. Internally
+   it uses `opencv_createsamples`. So you have to have it compiled. It will create a lot of
+   `.vec` files in the specified directory. You can get this script from [here](http://note.sonots.com/SciSoftware/haartraining.html#w0a08ab4). This command transforms each image in the `positives.txt` and places the results as `.vec` files in the `vec_storage_tmp_dir` folder. We will have to concatenate them on the next step.
+4. Run `python mergevec.py -v vec_storage_tmp_dir -o final.vec`. You will have one `.vec` file
+   with all the images. You can get this file from [here](https://github.com/wulfebw/mergevec).
+5. Run the `vec2images final.vec output/%07d.png -w size -h size`. All the images will be in
+   the output folder. `vec2image` has to be compiled. You can get the source from [here](http://note.sonots.com/SciSoftware/haartraining/vec2img.cpp.html).
+
+You can see the results of the script now:
+
+![Aligned face one]({{ site.url }}/assets/img/transformed_1.png)
+![Aligned face one]({{ site.url }}/assets/img/transformed_2.png)
+![Aligned face one]({{ site.url }}/assets/img/transformed_3.png)
+![Aligned face one]({{ site.url }}/assets/img/transformed_4.png)
+![Aligned face one]({{ site.url }}/assets/img/transformed_5.png)
