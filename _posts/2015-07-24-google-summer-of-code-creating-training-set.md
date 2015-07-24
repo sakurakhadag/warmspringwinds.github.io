@@ -67,8 +67,14 @@ This is a small description on how to do it:
 
 You can see the results of the script now:
 
-![Aligned face one]({{ site.url }}/assets/img/transformed_1.png)
-![Aligned face one]({{ site.url }}/assets/img/transformed_2.png)
-![Aligned face one]({{ site.url }}/assets/img/transformed_3.png)
-![Aligned face one]({{ site.url }}/assets/img/transformed_4.png)
-![Aligned face one]({{ site.url }}/assets/img/transformed_5.png)
+![Transformed face one]({{ site.url }}/assets/img/transformed_1.png)
+![Transformed face one]({{ site.url }}/assets/img/transformed_2.png)
+![Transformed face one]({{ site.url }}/assets/img/transformed_3.png)
+![Transformed face one]({{ site.url }}/assets/img/transformed_4.png)
+![Transformed face one]({{ site.url }}/assets/img/transformed_5.png)
+
+## Negative samples.
+
+Negative samples were collected from the [aflw](https://lrs.icg.tugraz.at/research/aflw/) database by
+eleminating faces from the images and taking random samples from the images.
+This makes sence because the classifier will learn negatives samples from the images where the faces usually located. Some people usually take random pictures of text or walls for negative examples, but it makes sence to train classifier on the things that most probably will be on the images with faces.
