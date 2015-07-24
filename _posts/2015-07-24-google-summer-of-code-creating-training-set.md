@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google Summer of Code: Creating Training set"
+title: "Google Summer of Code: Creating Training set."
 description:
 comments: true
 categories:
@@ -20,7 +20,7 @@ useful, because we can use this information to align faces.
 Why do we need to align faces?
 Take a look at this photo:
 
-![Not aligned face]({{ site.url }}/assets/not_aligned_face.jpg)
+![Not aligned face]({{ site.url }}/assets/img/not_aligned_face.jpg)
 
 If we just crop the faces as they are, it will be really hard for classifier to learn from it.
 The reason for this is that we don't know how all of the faces in the database are positioned.
