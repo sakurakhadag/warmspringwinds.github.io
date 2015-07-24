@@ -28,3 +28,18 @@ Like in the example above the face is rotated.
 In order to get a good dataset we first align faces and then add small random transformations
 that we can control ourselves. This is really convinient because if the training goes bad,
 we can just change the parameters of the random transformations and experiment.
+
+In order to align faces, we take the coordinates of eyes and draw a line through them.
+Then we just rotate the image in order to make this line horizontal. Before running
+the script the size of resulted images is specified and the amount of the area above and
+below the eyes, and on the right and the left side of a face. The cropping also takes care
+of the proportion ratio. Otherwise, if we blindly `resize` the image the resulted face will
+be spoiled and the classifier will work bad. That way we can be sure now that all our faces
+are placed cosistently and we can start to run random transformations. The idea that I described
+was taken from the [following page](http://www.bytefish.de/blog/aligning_face_images/).
+
+Have a look at the aligned faces:
+
+![Aligned face one]({{ site.url }}/assets/img/aligned_face_one.jpg)
+![Aligned face two]({{ site.url }}/assets/img/aligned_face_two.jpg)
+![Aligned face three]({{ site.url }}/assets/img/aligned_face_three.jpg)
