@@ -35,7 +35,7 @@ numpy matrix operations. Also that fact that I was working with raw arrays made 
 I wasn't able to finish the training part by the deadline of GSOC and had to work a little bit more
 which didn't count towards GSOC but still I wanted to finish this part.
 
-## Gentle Adaboost
+## Gentle Adaboost.
 
 The Gentle Adaboost works by training classifiers based on the training set and weights which
 describe the importance of a particular training example. In our case we have faces and non-faces.
@@ -113,11 +113,28 @@ And this is the first feature that was found using the same process but with the
 
 ![Aligned face three]({{ site.url }}/assets/img/orig_tree.png)
 
-As it can be seen the result is better. This is because the binary tree is a worse classifier than a tree with
+As it can be seen the result is better. Because it is more similar to the features that were derived in the
+Viola and Jones paper. In this case this feature says that the regions or eyes are usually darker than the regions
+of nose. This is an example of weak classifier.
+The results are like this because the binary tree is a worse classifier than a tree with
 256 branches.
 
+This is why there is still a place to improve the classifier by using trees from the paper.
 
 
+## Attentional Cascade.
+
+During the implementation I stricly followed the [Viola and Jones paper][viola_jones].
+
+## Results of the work by the end of the deadline of GSOC
+
+By the end of the GSOC I was able to implement the efficient evaluation part for face detection.
+So the script uses the trained xml file from OpenCV and is able to detect faces on the image.
+This was made with the help of OpenMP because some parts can be done in parallel and otherwise
+the detection takes too long.
+
+The training part was partially implemented and the delay was caused by the absence of information
+about the efficient algorithm for splitting the binary tree in case of categorical variables.
 
 
 
