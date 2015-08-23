@@ -55,12 +55,12 @@ The problem seems easy, but it's not.
 
 As we use Multi-block Binary Patterns, that means that the features (patterns themselves) are categorical
 variables. For example, numbers are not categorical variables and can be easily ordered and compared to each other.
-So, in case of numbers if we have $n$ values we have to check $n-1$ possible split values. When we deal with categorical
+So, in case of numbers if we have $$n$$ values we have to check $$n-1$$ possible split values. When we deal with categorical
 variables like colors (red, blue, black and so on) and Multi-block Binary Patterns it means that we can't compare or 
-order them, so in order to find a best split if we have $n$ values we have to try $2^{n-1}$ possibles splits. For example,
+order them, so in order to find a best split if we have $$n$$ values we have to try $$2^{n-1}$$ possibles splits. For example,
 in case of colors (red, blue, black, green) one possible split will be red and blue go to the right branch and
-others go to the right one. In case of Multi-block Binary Patterns we have $256$ values and it means that we have to
-check $2^{255}$ possible splits which is not feasible.
+others go to the right one. In case of Multi-block Binary Patterns we have $$256$$ values and it means that we have to
+check $$2^{255}$$ possible splits which is not feasible.
 
 While reading the [OpenCV documentation about decision trees][opencv_trees] I have found that there is a special algorithm
 for this particular case:
@@ -95,6 +95,29 @@ the complexity from exponential case to linear.
 It was really strange that I found no description of this algorithm online and only this sentence that I
 found just by chance. It may be the case that this particular case is really rare in real world and nobody
 teaches it.
+
+One more observation that I had is that by using the original tree from the paper we have a faster training process
+and a better one but a little bit slower evaluation part. I think in the future after more experiments we can also
+support the training that uses the original tree from the paper. By now we have the binary decision tree like in the
+OpenCV.
+
+These are the first 4 most descriptive Multi-block Binary Patterns features that were found by Gentle Adaboost and
+binary decision trees:
+
+![Aligned face one]({{ site.url }}/assets/img/mb_feat_1.png)
+![Aligned face two]({{ site.url }}/assets/img/mb_feat_2.png)
+![Aligned face three]({{ site.url }}/assets/img/mb_feat_3.png)
+![Aligned face three]({{ site.url }}/assets/img/mb_feat_4.png)
+
+And this is the first feature that was found using the same process but with the original tree from the paper:
+
+![Aligned face three]({{ site.url }}/assets/img/orig_tree.png)
+
+As it can be seen the result is better. This is because the binary tree is a worse classifier than a tree with
+256 branches.
+
+
+
 
 
 
