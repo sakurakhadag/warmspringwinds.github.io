@@ -15,6 +15,6 @@ ___
 ## Overall description of the training process.
 
 some python:
-```python
+{% highlight python %}
 import numpy as np
-```
+{% endhighlight %}
