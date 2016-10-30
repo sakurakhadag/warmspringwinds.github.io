@@ -4,18 +4,17 @@ title: "Image Classification and Segmentation using Tensorflow and TF-Slim"
 description:
 comments: true
 categories:
-- blog
+- gsoc
 ---
 
 
-Learn how to perform Image Classification and Image Segmentation using Tensorflow.
+test
 
 ___
 
-## Test
+## Overall description of the training process.
 
-Test python
-
+some python:
 ```python
-import numpy as numpy
+import numpy as np
 ```
