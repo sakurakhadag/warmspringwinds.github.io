@@ -16,8 +16,9 @@ ___
 
 some python:
 {% highlight python %}
-import numpy as np
+import sys
+import os
 
-def big_test():
-    print('hello')
+os.environ["CUDA_VISIBLE_DEVICES"] = '0'
+sys.path.append("/home/dpakhom1/workspace/models/slim")
 {% endhighlight %}
