@@ -17,4 +17,7 @@ ___
 some python:
 {% highlight python %}
 import numpy as np
+
+def big_test():
+    print('hello')
 {% endhighlight %}
