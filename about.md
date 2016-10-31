@@ -4,10 +4,12 @@ title: About me
 permalink: /about/
 ---
 
-Hi, I am Daniil Pakhomov, a master student at Technical University of Munich
-and a PhD student at Johns Hopkins University.
+Hi, I am Daniil Pakhomov, a PhD student at Johns Hopkins University. 
+My main research interests are Computer Vision, Deep Learning, Machine Learning.
+To be more specific, I focus on Object Detection and Segmentation in general and
+for Medical Images.
 
-I am studying Computer Vision and Machine Learning.
+
 This blog was originally created to post my progress in [Google Summer of Code][gsoc] project
 for [Scikit-image open source image processing library][skimage] in implementing Face Detection algorithm.
 
