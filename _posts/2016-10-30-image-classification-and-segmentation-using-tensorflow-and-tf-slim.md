@@ -38,24 +38,28 @@ This post assumes a prior knowledge of Tensorflow and some small knowlege of
 Convolutional Neural Networks. Tensorflow has a nice tutorials on both of these.
 You can find them [here](https://www.tensorflow.org/versions/r0.9/tutorials/mnist/pros/index.html).
 
+The blog post is created using jupyter notebook. After each chunk of a code
+you can see the result of its evaluation. You can also get the notebook
+file from [here](http://google.com). The content of the blog post
+is partially borrowed from (slim walkthough notebook)[https://github.com/tensorflow/models/blob/master/slim/slim_walkthough.ipynb].
+
 ### Setup
 
 
 
 To be able to run the code, you will need to have Tensorflow installed. I have used _r0.11_.
-
-You will also need to have _tensorflow/models_ repository cloned. To clone it, simply run:
+You will need to have _tensorflow/models_ repository cloned. To clone it, simply run:
 
 {% highlight bash %}
 git clone https://github.com/tensorflow/models
 {% endhighlight %}
 
-I am also using scikit-image library and numpy for this tutorial. One of the ways to install them is to download _Anaconda_ software package for python.
+I am also using scikit-image library and numpy for this tutorial plus other
+dependencies. One of the ways to install them is to download _Anaconda_ software
+package for python.
 
 First, we specify tensorflow to use the first GPU only. Be careful, by default it will use all
-available memory.
-
-Second, we need to add the cloned repository to the path, so that python is
+available memory. Second, we need to add the cloned repository to the path, so that python is
 able to see it.
 
 
@@ -90,6 +94,11 @@ dataset_utils.download_and_uncompress_tarball(url, checkpoints_dir)
 
 
 ### Image Classification
+
+The model that we have just downloaded was trained to be able to classify images
+into (1000 classes)[http://image-net.org/challenges/LSVRC/2014/browse-synsets].
+The set of classes is very diverse. In our blog post we will use the pretrained model
+to classify, annotate and segment images into these _1000_ classes.
 
 Below you can see an example of _Image Classification_. We preprocess the input image by
 resizing it while preserving the aspect ratio and crop the central part. The size of the crop
