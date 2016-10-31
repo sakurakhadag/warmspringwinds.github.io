@@ -4,7 +4,7 @@ title: About me
 permalink: /about/
 ---
 
-Hi, I am Daniil Pakhomov, a PhD student at Johns Hopkins University. 
+Hi, I am Daniil Pakhomov, PhD student at Johns Hopkins University. 
 My main research interests are Computer Vision, Deep Learning, Machine Learning.
 To be more specific, I focus on Object Detection and Segmentation in general and
 for Medical Images.
