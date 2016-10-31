@@ -26,7 +26,7 @@ I have tried other libraries before like _Caffe_, _Matconvnet_,
 _Theano_ and _Torch_. All of them have their pros and cons, but I
 always wanted a library in Python that is flexible, has good support and
 has a lot of pretrained models. Recently, a new library called _slim_
-was released along with a set of standart pretrained models like _AlexNet_,
+was released along with a set of standart pretrained models like _ResNet_,
 _VGG_, _Inception v3_ (new winner of ILSVRC) and others. This library along
 with models are supported by Google, which makes it even better. There was a need
 for a library like this because Tensorflow itself is very low-level and any implementation
@@ -71,7 +71,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 sys.path.append("/home/dpakhom1/workspace/models/slim")
 {% endhighlight %}
 
-Now, let's download the VGG-16 model which we will use for classification of images and segmentation. You can also use networks that will consume less memory(for example, ResNet50). For more models look [here](https://github.com/tensorflow/models/tree/master/slim#pre-trained-models). 
+Now, let's download the VGG-16 model which we will use for classification of images and segmentation. You can also use networks that will consume less memory(for example, AlexNet). For more models look [here](https://github.com/tensorflow/models/tree/master/slim#pre-trained-models). 
 
 
 {% highlight python %}
@@ -394,7 +394,8 @@ Anyways, the results that we got are suitable for image annotation and very appr
 
 Performing Segmentation using Convolutional Neural Networks can be seen as performing classification
 at different parts of an input image. We center network at a particular pixel, make prediction and
-assign label to that pixel.
+assign label to that pixel. This way we add spatial information to our classification and get
+segmentation.
 
 ### Conclusion and Discussion
 
@@ -403,5 +404,5 @@ _Segmentation_. The post also explains a certain amount of theory behind both ta
 
 In my opinion, _slim_ along with pretrained models can be a very powerful tool while
 remaining very flexible and you can always intermix Tensorflow with it. It is relatively
-new. So, it lacks documentation and sometimes you have to read the source code. It has support
-from Google and might become better in a near future.
+new, therefore, it lacks documentation and sometimes you have to read the source code. It has support
+from Google and is currently in an active development. 
