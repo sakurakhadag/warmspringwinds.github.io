@@ -67,7 +67,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 sys.path.append("/home/dpakhom1/workspace/models/slim")
 {% endhighlight %}
 
-Now, let's download the VGG-16 which we will use for classification of images and segmentation. You can also use networks that will consume less memory(for example, ResNet50). For more models look [here](https://github.com/tensorflow/models/tree/master/slim#pre-trained-models). 
+Now, let's download the VGG-16 model which we will use for classification of images and segmentation. You can also use networks that will consume less memory(for example, ResNet50). For more models look [here](https://github.com/tensorflow/models/tree/master/slim#pre-trained-models). 
 
 
 {% highlight python %}
@@ -363,8 +363,10 @@ discrete_matshow(data=relabeled_image, labels_names=labels_names, title="Segment
 
 {% endhighlight %}
 
-
 ![png]({{ site.url }}/assets/img/Untitled1_13_0.png)
+
+
+![png]({{ site.url }}/assets/img/Untitled1_13_1.png)
 
 
 As we can see above, we got a simple segmentation for our image. It is not
