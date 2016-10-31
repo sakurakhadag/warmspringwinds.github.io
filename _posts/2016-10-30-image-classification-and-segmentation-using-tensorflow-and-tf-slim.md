@@ -26,7 +26,7 @@ I have tried other libraries before like _Caffe_, _Matconvnet_,
 _Theano_ and _Torch_. All of them have their pros and cons, but I
 always wanted a library in Python that is flexible, has good support and
 has a lot of pretrained models. Recently, a new library called _slim_
-was released along with a set of standart pretrained models like _ResNet_,
+was released along with a set of standart pretrained models like _AlexNet_,
 _VGG_, _Inception v3_ (new winner of ILSVRC) and others. This library along
 with models are supported by Google, which makes it even better. There was a need
 for a library like this because Tensorflow itself is very low-level and any implementation
@@ -237,7 +237,6 @@ with tf.Graph().as_default():
 ### Image Annotation and Segmentation
 
 
-
 As you can see from the previous example, only a certain part 
 of the original image is being processed by the network. This is good only
 for cases when we want to get a single prediction for an image.
@@ -271,8 +270,8 @@ the Segmentation of the same size as an input, deconvolutional layers can be use
 read more about this in the paper _fully convolutional networks for semantic segmentation_ by Long et al.
 We won't consider deconvolutional layers in this example. Example below shows how to get segmentation of lower
 resolution than the input. Deconvolutional layers can be seen as a way to perform interpolation.
-The reason why deconvolutional layers are employed instead of just simply performing quadratic interpolation
-or another type is that we can learn the most suitable interpolation for our task.
+Interpolation can be different (quadratic, qubic and other) but network can learn a specific
+interpolation that performs well under a certain task.
 
 
 {% highlight python %}
@@ -377,6 +376,16 @@ discrete_matshow(data=relabeled_image, labels_names=labels_names, title="Segment
 
 ![png]({{ site.url }}/assets/img/Untitled1_13_1.png)
 
+The segmentation that was obtained shows that network was able to find
+the school bus, traffic sign in the left-top corner that can't be clearly
+seen in the image. It was able to locate windows at the top-left corner and even
+made a hypothesis that it is a library (we don't know if that is true). It also made
+a certain number of not so correct predictions. Those are usually caused by the fact
+that the network can only see a part of image when it is centered at a pixel. The 
+characteristic of a network that represents it is called _receptive field_. Receptive
+field of the network that we use in this blog is _404_ pixels. So when network can
+only see a part of the school bus, it confuses it with taxi or pickup truck. You can
+see that in the bottom-left corner of segmentation results. 
 
 As we can see above, we got a simple segmentation for our image. It is not
 very precise because the network was originally trained to perform classification
