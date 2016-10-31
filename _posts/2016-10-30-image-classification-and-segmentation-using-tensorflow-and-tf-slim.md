@@ -29,13 +29,12 @@ has a lot of pretrained models. Recently, a new library called _slim_
 was released along with a set of standart pretrained models like _ResNet_,
 _VGG_, _Inception v3_ (new winner of ILSVRC) and others. This library along
 with models are supported by Google, which makes it even better. There was a need
-for a library like this because Tensorflow itself is very low-level and any implementation
+for a library like this because Tensorflow itself is a very low-level and any implementation
 can become highly complicated. It requires writing a lot of boilerplate code.
 Reading other people's code was also complicated. _slim_ is a very clean
 and lightweight wrapper around Tensorflow with pretrained models.
 
-This post assumes a prior knowledge of Tensorflow and some small knowlege of
-Convolutional Neural Networks. Tensorflow has a nice tutorials on both of these.
+This post assumes a prior knowledge of Tensorflow and Convolutional Neural Networks. Tensorflow has a nice tutorials on both of these.
 You can find them [here](https://www.tensorflow.org/versions/r0.9/tutorials/mnist/pros/index.html).
 
 The blog post is created using jupyter notebook. After each chunk of a code
