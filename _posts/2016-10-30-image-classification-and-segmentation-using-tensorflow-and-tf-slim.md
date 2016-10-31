@@ -1,14 +1,16 @@
 ---
 layout: post
-title: "Image Classification and Segmentation using Tensorflow and TF-Slim"
+title: "Image Classification and Segmentation with Tensorflow and TF-Slim"
 description:
 comments: true
 categories:
-- gsoc
+- Tensorflow
+- Slim
 ---
 
 
-test
+A post showing how to perform Image Classification and Image Segmentation
+with a recently released TF-Slim library and pretrained models.
 
 ___
 
