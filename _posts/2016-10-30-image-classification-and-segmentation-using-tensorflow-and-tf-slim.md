@@ -5,7 +5,7 @@ description:
 comments: true
 categories:
 - Tensorflow
-- Slim
+- TF-Slim
 ---
 
 
