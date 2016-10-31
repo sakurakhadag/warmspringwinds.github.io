@@ -19,19 +19,19 @@ ___
 
 In this post I want to show an example of application of Tensorflow
 and a recently released library _slim_ for _Image Classification_,
-```Image Annotation``` and ```Segmentation```. In the post I focus on
-```slim```, cover a small theoretical part and show possible applications.
+_Image Annotation_ and _Segmentation_. In the post I focus on
+_slim_, cover a small theoretical part and show possible applications.
 
-I have tried other libraries before like ```Caffe```, ```Matconvnet```,
-```Theano``` and ```Torch```. All of them have their pros and cons, but I
+I have tried other libraries before like _Caffe_, _Matconvnet_,
+_Theano_ and _Torch_. All of them have their pros and cons, but I
 always wanted a library in Python that is flexible, has good support and
-has a lot of pretrained models. Recently, a new library called ```slim```
-was released along with a set of standart pretrained models like ```ResNet```,
-```VGG```, ```Inception v3``` (new winner of ILSVRC) and others. This library along
+has a lot of pretrained models. Recently, a new library called _slim_
+was released along with a set of standart pretrained models like _ResNet_,
+_VGG_, _Inception v3_ (new winner of ILSVRC) and others. This library along
 with models are supported by Google, which makes it even better. There was a need
 for a library like this because Tensorflow itself is very low-level and any implementation
 can become highly complicated. It requires writing a lot of boilerplate code.
-Reading other people's code was also complicated. ```slim``` is a very clean
+Reading other people's code was also complicated. _slim_ is a very clean
 and lightweight wrapper around Tensorflow with pretrained models.
 
 This post assumes a prior knowledge of Tensorflow and some small knowlege of
@@ -42,13 +42,15 @@ You can find them [here](https://www.tensorflow.org/versions/r0.9/tutorials/mnis
 
 
 
-To be able to run the code, you will need to have Tensorflow installed. I have used ```r0.11```.
+To be able to run the code, you will need to have Tensorflow installed. I have used _r0.11_.
 
-You will also need to have ```tensorflow/models``` repository cloned. To clone it, simply run:
+You will also need to have _tensorflow/models_ repository cloned. To clone it, simply run:
 
-```git clone https://github.com/tensorflow/models```
+{% highlight bash %}
+git clone https://github.com/tensorflow/models
+{% endhighlight %}
 
-I am also using scikit-image library and numpy for this tutorial. One of the ways to install them is to download ```Anaconda``` software package for python.
+I am also using scikit-image library and numpy for this tutorial. One of the ways to install them is to download _Anaconda_ software package for python.
 
 First, we specify tensorflow to use the first GPU only. Be careful, by default it will use all
 available memory.
@@ -89,7 +91,7 @@ dataset_utils.download_and_uncompress_tarball(url, checkpoints_dir)
 
 ### Image Classification
 
-Below you can see an example of ```Image Classification```. We preprocess the input image by
+Below you can see an example of _Image Classification_. We preprocess the input image by
 resizing it while preserving the aspect ratio and crop the central part. The size of the crop
 is equal to the size of images that the network was trained on.
 
@@ -245,19 +247,19 @@ engine: "Give me all images where the school bus is located in the middle AND
 flower pot in the top left corner".
 
 There are cases when we need to classify each pixel of the image, also know as the task
-of ```Segmentation```. Imagine, that we have a huge dataset with pictures and we want to blur
+of _Segmentation_. Imagine, that we have a huge dataset with pictures and we want to blur
 faces of people there, so that we don't have to get their permission to publish these 
 pictures. For example, you can see people's faces being blured in Google Street View. But
-we only need to blur faces and not other content that might be important. ```Segmentation``` can
+we only need to blur faces and not other content that might be important. _Segmentation_ can
 help us in this case. We can get pixels that belong to faces and blur only them.
 
-Below we will see a simple example of ```Segmentation```. For the simplicity, the segmentation will
+Below we will see a simple example of _Segmentation_. For the simplicity, the segmentation will
 be of a smaller size than the original image. We can do segmentation using an existing Convolutional
 Neural Network by applying it in a Fully Convolutional manner. This is done by casting the
 Fully Connected Layers of a network into Convolutional -- this way we can input image of any size
 and get segmentation of lower resolution due to max-pooling layers that are used in network. To get
 the Segmentation of the same size as an input, deconvolutional layers can be used. You can
-read more about this in the paper ```fully convolutional networks for semantic segmentation``` by Long et al.
+read more about this in the paper _fully convolutional networks for semantic segmentation_ by Long et al.
 We won't consider deconvolutional layers in this example. Example below shows how to get segmentation of lower
 resolution than the input. Deconvolutional layers can be seen as a way to perform interpolation.
 The reason why deconvolutional layers are employed instead of just simply performing quadratic interpolation
@@ -376,10 +378,10 @@ assign label to that pixel.
 
 ### Conclusion and Discussion
 
-In this blog post we covered ```slim``` library by performing ```Image Classification``` and
-```Segmentation```. The post also explains a certain amount of theory behind both tasks.
+In this blog post we covered _slim_ library by performing _Image Classification_ and
+_Segmentation_. The post also explains a certain amount of theory behind both tasks.
 
-In my opinion, ```slim``` along with pretrained models can be a very powerful tool while
+In my opinion, _slim_ along with pretrained models can be a very powerful tool while
 remaining very flexible and you can always intermix Tensorflow with it. It is relatively
 new. So, it lacks documentation and sometimes you have to read the source code. It has support
 from Google and might become better in a near future.
