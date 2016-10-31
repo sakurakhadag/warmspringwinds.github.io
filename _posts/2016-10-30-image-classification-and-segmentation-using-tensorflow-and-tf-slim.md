@@ -18,7 +18,7 @@ ___
 ### Inroduction
 
 In this post I want to show an example of application of Tensorflow
-and a recently released library ```slim``` for ```Image Classification```,
+and a recently released library __slim__ for __Image Classification__,
 ```Image Annotation``` and ```Segmentation```. In the post I focus on
 ```slim```, cover a small theoretical part and show possible applications.
 
