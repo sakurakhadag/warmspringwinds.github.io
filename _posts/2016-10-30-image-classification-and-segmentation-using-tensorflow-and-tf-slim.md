@@ -18,7 +18,7 @@ ___
 ### Inroduction
 
 In this post I want to show an example of application of Tensorflow
-and a recently released library _slim_ for _Image Classification_,
+and a [recently released](https://research.googleblog.com/2016/08/tf-slim-high-level-library-to-define.html) library _slim_ for _Image Classification_,
 _Image Annotation_ and _Segmentation_. In the post I focus on
 _slim_, cover a small theoretical part and show possible applications.
 
@@ -96,7 +96,7 @@ dataset_utils.download_and_uncompress_tarball(url, checkpoints_dir)
 ### Image Classification
 
 The model that we have just downloaded was trained to be able to classify images
-into (1000 classes)[http://image-net.org/challenges/LSVRC/2014/browse-synsets].
+into [1000 classes](http://image-net.org/challenges/LSVRC/2014/browse-synsets).
 The set of classes is very diverse. In our blog post we will use the pretrained model
 to classify, annotate and segment images into these _1000_ classes.
 
