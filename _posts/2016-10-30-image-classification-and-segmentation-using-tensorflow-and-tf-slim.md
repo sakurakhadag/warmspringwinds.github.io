@@ -27,7 +27,7 @@ _Theano_ and _Torch_. All of them have their pros and cons, but I
 always wanted a library in Python that is flexible, has good support and
 has a lot of pretrained models. Recently, a new library called _slim_
 was released along with a set of standart pretrained models like _ResNet_,
-_VGG_, _Inception v3_ (new winner of ILSVRC) and others. This library along
+_VGG_, _Inception-ResNet-v2_ ([new winner of ILSVRC](https://research.googleblog.com/2016/08/improving-inception-and-image.html)) and others. This library along
 with models are supported by Google, which makes it even better. There was a need
 for a library like this because Tensorflow itself is a very low-level and any implementation
 can become highly complicated. It requires writing a lot of boilerplate code.
