@@ -59,6 +59,10 @@ To be more specific we will have _FCN-32_ _Segmentation_ network implemented whi
 described in the paper _Fully convolutional networks for semantic segmentation_.
 To perform the training, the loss function has to be defined and training dataset provided.
 
+The blog post is created using jupyter notebook. After each chunk of a code
+you can see the result of its evaluation. You can also get the notebook
+file from [here](https://github.com/warmspringwinds/tensorflow_notes/blob/master/upsampling_segmentation.ipynb).
+
 ### Setup
 
 To be able to run the provided code, follow the previous post and run the
