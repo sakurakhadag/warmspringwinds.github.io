@@ -303,14 +303,16 @@ def upsample_tf(factor, input_img):
                 upsample_filt_pl = tf.placeholder(tf.float32)
                 logits_pl = tf.placeholder(tf.float32)
 
-                upsample_filter_np = bilinear_upsample_weights(factor, number_of_classes)
+                upsample_filter_np = bilinear_upsample_weights(factor,
+                                        number_of_classes)
 
                 res = tf.nn.conv2d_transpose(logits_pl, upsample_filt_pl,
-                                 output_shape=[1, new_height, new_width, number_of_classes],
-                                 strides=[1, factor, factor, 1])
+                        output_shape=[1, new_height, new_width, number_of_classes],
+                        strides=[1, factor, factor, 1])
 
-                final_result = sess.run(res, feed_dict={upsample_filt_pl: upsample_filter_np,
-                                             logits_pl: expanded_img})
+                final_result = sess.run(res,
+                                feed_dict={upsample_filt_pl: upsample_filter_np,
+                                           logits_pl: expanded_img})
     
     return final_result.squeeze()
 
