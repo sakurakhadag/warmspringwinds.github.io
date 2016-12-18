@@ -35,7 +35,9 @@ we tackle this problem by performing Conditional Random Field post-processing st
 refines our segmentation by taking into account pure RGB features of image and probabilities
 produced by our network. Overall, we get a refined segmentation. The set-up of this post
 is very simple on purpose. Similar approach to Segmentation was described in the paper
-_Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs_ by Chen et al.
+_Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs_ by Chen et al. Please, take into account that setup in this post was made only to show limitation
+of _FCN-32s_ model, to perform the training for real-life scenario, we refer readers to 
+the paper _Fully convolutional networks for semantic segmentation_.
 
 The blog post is created using jupyter notebook. After each chunk of a code
 you can see the result of its evaluation. You can also get the notebook
