@@ -39,7 +39,7 @@ _Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CR
 
 The blog post is created using jupyter notebook. After each chunk of a code
 you can see the result of its evaluation. You can also get the notebook
-file from [here](http://google.com). The content of the blog post
+file from [here](https://github.com/warmspringwinds/tensorflow_notes/blob/master/image_segmentation_conditional_random_fields.ipynb). The content of the blog post
 is partially borrowed from [slim walkthough notebook](https://github.com/tensorflow/models/blob/master/slim/slim_walkthough.ipynb).
 
 ### Setup
