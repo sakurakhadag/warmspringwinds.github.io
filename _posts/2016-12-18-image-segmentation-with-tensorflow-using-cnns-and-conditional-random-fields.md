@@ -180,7 +180,7 @@ $$
 E = -\sum_{n=1}^{N} \sum_{k=1}^{K} t_{nk}ln(y_{nk})
 $$
 
-Where $N$ is a number of pixels, $$K$$ - number of classes, $$t_{nk}$$ a variable representing
+Where $$N$$ is a number of pixels, $$K$$ - number of classes, $$t_{nk}$$ a variable representing
 the ground-truth with 1-of-$$K$$ coding scheme, $$y_{nk}$$ represent our predictions (softmax output).
 
 For this case we use Adam optimizer because it requires less parameter tuning to get good results.
