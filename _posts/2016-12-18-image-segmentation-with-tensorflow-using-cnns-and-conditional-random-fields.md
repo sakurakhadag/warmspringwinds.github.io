@@ -54,11 +54,11 @@ dependencies. One of the ways to install them is to download _Anaconda_ software
 package for python.
 
 Follow all the other steps described in the previous posts -- it shows how to download
-the _VGG-16_ model and I also forked the 
+the _VGG-16_ model and perform all other necessary for this tutorial steps. 
 
 ### Upsampling helper functions and Image Loading
 
-In this part, we define helper functions that were used in previous post.
+In this part, we define helper functions that were used in the previous post.
 If you recall, we used upsampling to upsample the downsampled predictions
 that we get from our network. We get downsampled predictions because of max-pooling
 layers that are used in _VGG-16_ network.
@@ -180,10 +180,10 @@ $$
 E = -\sum_{n=1}^{N} \sum_{k=1}^{K} t_{nk}ln(y_{nk})
 $$
 
-Where $N$ is a number of pixels, $K$ - number of classes, $t_{nk}$ a variable representing
-the ground-truth with 1-of-$K$ coding scheme, $y_{nk}$ represent our predictions (softmax output).
+Where $N$ is a number of pixels, $$K$$ - number of classes, $$t_{nk}$$ a variable representing
+the ground-truth with 1-of-$$K$$ coding scheme, $$y_{nk}$$ represent our predictions (softmax output).
 
-For this case we use Adam optimizer because it require less parameter tuning to get good results.
+For this case we use Adam optimizer because it requires less parameter tuning to get good results.
 
 In this particular case we train and evaluate our results on one image -- which is a much simpler case
 compared to real-world scenario. We do this to show the drawback of the approach -- just
@@ -520,8 +520,9 @@ Another approach is based on using _atrous convolutions_ and _fully connected co
 The approach is described in the _Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs_ by Chen et al. In this post we will only use CRF post-processing stage to show how it can improve
 the results.
 
-It is also worth mentioning that the current model was trained using dropout. This
-approach is described in _Dropout: a simple way to prevent neural networks from overfitting_
+It is also worth mentioning that the current model was trained with dropout
+applied to fully connected layers (fully connected layers that we casted to convolutional ones).
+This approach is described in _Dropout: a simple way to prevent neural networks from overfitting_
 by Srivastava et al. _Dropout_ is a regularization technique for training networks. It has a
 very good theoretical description while the implementation is very simple: we just
 randomly choose a certain number of neurons during each training step, perform
