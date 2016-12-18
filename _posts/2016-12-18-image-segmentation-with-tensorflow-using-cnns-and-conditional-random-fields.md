@@ -530,7 +530,7 @@ inference and backpropagation only through them. While from the theoretical side
 it can be seen as training a collection of thinned networks with weight sharing, where
 each network gets trained very rarely. During the test time, we average predictions
 from all of these networks. In the paper, the authors showed that dropout in case
-of linear regression is squivalent, in expection, to ridge regression.
+of linear regression is equivalent, in expection, to ridge regression.
 In our specific case we use dropout only for fully-connected
 layers (fully connected layers that we casted to convolutional ones). This explains
 why the loss for the final model is almost twice less then during the last iteration --
