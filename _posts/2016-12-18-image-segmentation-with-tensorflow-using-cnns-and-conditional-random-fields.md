@@ -536,6 +536,12 @@ layers (fully connected layers that we casted to convolutional ones). This expla
 why the loss for the final model is almost twice less then during the last iteration --
 because for the final inference we used averaging.
 
+The code that is provided above is made to run on one image, but you can
+easily run it on your dataset. The only change that is needed is to provide
+different image on each iteration step. This type of training will be
+exactly the same as in the _Fully convolutional networks for semantic segmentation_
+paper where the authors have used batch size of one.
+
 Overall, we can see that our segmentation is still quite coarse and we need to perform
 some additional step. In the next section we will use CRF post-processing step to make
 segmentation finer.
