@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tfrecords guide"
+title: "Tfrecords Guide"
 description:
 comments: true
 categories:
@@ -442,5 +442,5 @@ with tf.Session()  as sess:
 ### Conclusion and Discussion
 
 In this post we covered how to convert a dataset into _.tfrecord_ format,
-made sure that we have the same data and saw how to define a graph to
+made sure that we didn't corrupt the data and saw how to define a graph to
 read and batch files from the created file.
