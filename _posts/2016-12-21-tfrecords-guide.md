@@ -37,6 +37,10 @@ employing some built-in _tensorflow_ functions. Third part explains how to
 define a model for reading your data from created binary file and batch it
 in a random manner, which is necessary during training.
 
+The blog post is created using jupyter notebook. After each chunk of a code
+you can see the result of its evaluation. You can also get the notebook
+file from [here](https://github.com/warmspringwinds/tensorflow_notes/blob/master/tfrecords_guide.ipynb).
+
 ### Getting raw data bytes in numpy
 
 Here we demonstrate how you can get raw data bytes of an image (any ndarray)
