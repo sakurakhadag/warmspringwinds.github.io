@@ -51,7 +51,7 @@ we will have to store the raw image representation along with the dimensions
 of the original image.
 
 In the following examples, we convert the image into the raw representation,
-restore it and make sure that we original image and restored one are the same.
+restore it and make sure that the original image and the restored one are the same.
 
 
 ```python
