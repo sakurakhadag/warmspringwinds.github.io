@@ -268,7 +268,8 @@ import numpy as np
 sys.path.append("tf-image-segmentation/")
 sys.path.append("/home/dpakhom1/workspace/my_models/slim/")
 
-fcn_16s_checkpoint_path = '/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt'
+fcn_16s_checkpoint_path = \
+'/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt'
 
 os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 
@@ -312,7 +313,8 @@ with tf.Session() as sess:
     
     sess.run(initializer)
 
-    saver.restore(sess, "/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt")
+    saver.restore(sess,
+     "/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt")
     
     image_np, pred_np = sess.run([image_tensor, pred], feed_dict=feed_dict_to_use)
     
