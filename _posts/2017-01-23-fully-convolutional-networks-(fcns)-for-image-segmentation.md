@@ -202,7 +202,7 @@ pascal_segmentation_lut()
 
 
 Now, let's create a contour for our segmentation to make it look like an actual sticker.
-The save file is a _png_ file with a _alpha_ channel set up to eliminate the background.
+We save the file as _png_ with an _alpha_ channel that is set up to make background transparent.
 We still visualize the final segmentation on the black backgound to make the the countour
 visible. Otherwise, it is hard to see it, because the background of the page is white.
 
@@ -396,5 +396,5 @@ from the paper "Fully Convolutional Networks for Semantic Segmentation"
 by Long et al, namely _FCN-32s_, _FCN-16s_, _FCN-8s_ and qualitatively evaluated
 them by using them to create _Telegram stickers_.
 
-Segmentation can be improved for more complicated image with application of Conditional Random
+Segmentation can be improved for more complicated images with application of Conditional Random
 Fields (CRFs) as a post-processing stage, which we described in the previous post.
