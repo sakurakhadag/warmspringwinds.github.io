@@ -18,7 +18,7 @@ ___
 
 ### Introduction
 
-In this post we want to present [our _Image Segmentation_ library](https://github.com/warmspringwinds/tf-image-segmentation)
+In this post we want to present [Our _Image Segmentation_ library](https://github.com/warmspringwinds/tf-image-segmentation)
 that is based on _Tensorflow_ and _TF-Slim_ library, share some
 insights and thoughts and demonstrate one application of _Image Segmentation_. 
 
@@ -99,7 +99,8 @@ import numpy as np
 sys.path.append("tf-image-segmentation/")
 sys.path.append("/home/dpakhom1/workspace/my_models/slim/")
 
-fcn_16s_checkpoint_path = '/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt'
+fcn_16s_checkpoint_path = \
+ '/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt'
 
 os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 
@@ -145,7 +146,8 @@ with tf.Session() as sess:
     
     sess.run(initializer)
 
-    saver.restore(sess, "/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt")
+    saver.restore(sess,
+     "/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt")
     
     image_np, pred_np = sess.run([image_tensor, pred], feed_dict=feed_dict_to_use)
     
