@@ -63,7 +63,9 @@ we randomly change the scale of the training image. Due to this fact, we had to
 normalize the cross entropy loss, because, otherwise, it was hard to understand
 if the loss is decreasing (we had different number of pixels on each iteration stage as
 a result of random scaling). Here you can see the cross entropy loss plot:
-![alt text](https://github.com/warmspringwinds/tensorflow_notes/blob/master/data/imgs/cross_entropy.png)
+
+![png]({{ site.url }}/assets/img/cross_entropy.png)
+
 
 We trained with a _batch size_ one and used _Adam optimizer_. It is important to state here, that
 although we trained with a _batch size_ one, which might sound crazy -- it actually means that
@@ -385,9 +387,10 @@ be automated, we created stickers for _Telegram_ using [Telegram sticker bot](ht
 Here you can see how they look in _Telegram_ with the transparency and our
 countour:
 
-![alt text](https://github.com/warmspringwinds/tensorflow_notes/blob/master/data/imgs/mobile_screen_shot_2.png)
+![png]({{ site.url }}/assets/img/mobile_screen_shot_2.png)
 
-![alt text](https://github.com/warmspringwinds/tensorflow_notes/blob/master/data/imgs/mobile_screen_shot_1.png)
+![png]({{ site.url }}/assets/img/mobile_screen_shot_1.png)
+
 
 ### Conclusion and Discussion
 
