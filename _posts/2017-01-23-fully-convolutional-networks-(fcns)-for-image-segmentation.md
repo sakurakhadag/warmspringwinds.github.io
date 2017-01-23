@@ -9,9 +9,8 @@ categories:
 ---
 
 
-A post showing how to convert your dataset to _.tfrecords_ file
-and later on use it as a part of a computational graph.
-
+A post showing how to perform Image Segmentation using Fully Convolutional
+Networks that were trained on PASCAL VOC using our framework.
 ___
 
 
