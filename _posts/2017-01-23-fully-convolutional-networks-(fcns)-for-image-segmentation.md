@@ -11,6 +11,7 @@ categories:
 
 A post showing how to perform Image Segmentation using Fully Convolutional
 Networks that were trained on PASCAL VOC using our framework.
+
 ___
 
 
