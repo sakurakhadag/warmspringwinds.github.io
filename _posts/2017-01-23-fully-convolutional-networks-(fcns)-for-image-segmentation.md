@@ -41,7 +41,7 @@ are presented in the [repository](https://github.com/warmspringwinds/tf-image-se
 
 The blog post is created using jupyter notebook. After each chunk of a code
 you can see the result of its evaluation. You can also get the notebook
-file from [here](http://google.com).
+file from [here](https://github.com/warmspringwinds/tensorflow_notes/blob/master/fully_convolutional_networks.ipynb).
 
 ### Training on PASCAL VOC
 
