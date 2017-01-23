@@ -269,7 +269,7 @@ sys.path.append("tf-image-segmentation/")
 sys.path.append("/home/dpakhom1/workspace/my_models/slim/")
 
 fcn_16s_checkpoint_path = \
-'/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt'
+ '/home/dpakhom1/tf_projects/segmentation/model_fcn8s_final.ckpt'
 
 os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 
