@@ -162,10 +162,6 @@ with tf.Session() as sess:
 ![png]({{ site.url }}/assets/img/Untitled44_6_0.png)
 
 
-    /home/dpakhom1/anaconda2/lib/python2.7/site-packages/skimage/io/_plugins/matplotlib_plugin.py:74: UserWarning: Low image dynamic range; displaying image with stretched contrast.
-      warn("Low image dynamic range; displaying image with "
-
-
 
 ![png]({{ site.url }}/assets/img/Untitled44_6_2.png)
 
@@ -331,10 +327,7 @@ with tf.Session() as sess:
 ![png]({{ site.url }}/assets/img/Untitled44_12_0.png)
 
 
-    /home/dpakhom1/anaconda2/lib/python2.7/site-packages/skimage/io/_plugins/matplotlib_plugin.py:74: UserWarning: Low image dynamic range; displaying image with stretched contrast.
-      warn("Low image dynamic range; displaying image with "
-
-
+    
 
 ![png]({{ site.url }}/assets/img/Untitled44_12_2.png)
 
