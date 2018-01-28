@@ -340,7 +340,7 @@ even without gpu as it is not really computationally demanding.
 ### Midi dataset
 
 Next, we will work with a [small midi dataset](http://www-etud.iro.umontreal.ca/~boulanni/icml2012) consisting
-from approximately $$700$$ piano songs. We have used the ```Nottingam``` piano dataset (training split only).
+of approximately $$700$$ piano songs. We have used the ```Nottingam``` piano dataset (training split only).
 
 Turns out that any midi file can be [converted to piano roll](http://nbviewer.jupyter.org/github/craffel/pretty-midi/blob/master/Tutorial.ipynb) which is just is a time-frequency matrix where each row is a different MIDI pitch and each column is a different slice in time. So each piano song from our dataset will be represented as a matrix of size $$88\times song\_length$$, where $$88$$ is a number of pitches of the piano. Here is an example of
 piano roll matrix:
