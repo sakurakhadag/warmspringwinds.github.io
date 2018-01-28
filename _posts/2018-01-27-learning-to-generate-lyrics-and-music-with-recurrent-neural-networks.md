@@ -26,7 +26,7 @@ And finally, we conclude by training our model on midi dataset of piano songs.
 While solving all these tasks, we will briefly explore some interesting concepts related to RNN
 training and inference like character-level RNN, conditional character-level RNN,
 sampling from RNN, truncated backpropagation through time and gradient checkpointing. All the code and
-trained models are [available on github](https://github.com/warmspringwinds/pytorch-rnn-sequence-generation-classification) and were implemented in [Pytorch](http://pytorch.org/). The blog post can also [be viewed in a jupyter notebook format](https://github.com/warmspringwinds/pytorch-rnn-sequence-generation-classification/blob/master/blog_post.ipynb).
+trained models are [available on github](https://github.com/warmspringwinds/pytorch-rnn-sequence-generation-classification) and were implemented in [Pytorch](http://pytorch.org/). The blog post can also [be viewed in a jupyter notebook format](https://github.com/warmspringwinds/pytorch-rnn-sequence-generation-classification/blob/master/blog_post.ipynb). If you are already familiar with the character-level language model and recurrent neural networks, feel free to skip respective sections or go directly to the results section.
 
 
 ### Character-Level language model
