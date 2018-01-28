@@ -40,14 +40,14 @@ Our language model is defined on a character level. We will create a dictionary 
 all English characters plus some special symbols, like period, comma, and end-of-line symbol. Each charecter will be represented as one-hot-encoded tensor. For more information about character-level models and examples, I recommend [this resource](https://github.com/spro/practical-pytorch).
 
 Having characters, we can now form sequences of characters. We can generate sentences even now just by
-randomly sampling character after character with a fixed probability $p(any~letter)=\frac{1}{dictionary~size}$.
+randomly sampling character after character with a fixed probability $$p(any~letter)=\frac{1}{dictionary~size}$$.
 That's the most simple character level language model. Can we do better than this? Yes, we can compute the probabily of occurance of each letter from our training corpus (number of times a letter occures divided by the size of our dataset) and randomly sample letter using these probabilities. This model is better but it totally ignores the relative positional aspect of each letter. For example, pay attention on how you read any word: you start with the first letter, which is usually hard to predict, but as you reach the end of a word you can sometimes guess the next letter. When you read any word you are implicitly using some rules which you learned by reading other texts: for example, with each additional letter that you read from a word, the probability of a space character increases (really long words are rare) or the probability of any consonant after the letter "r" is low as it usually followed by vowel. There are lot of similar rules and we hope that our model will be able to learn them from data. To give our model a chance to learn these rules we need to extend it.
 
 Let's make a small gradual improvement of our model and let probability of each letter depend
-only on the previously occured letter ([markov assumption](https://en.wikipedia.org/wiki/Markov_property)). So, basically we will have $p(current~letter|previous~letter)$.
-This is a [Markov chain model](https://en.wikipedia.org/wiki/Markov_chain) (also try these [interactive visualizations](http://setosa.io/ev/markov-chains/) if you are not familiar with it). We can also estimate the probability distribution $p(current~letter|previous~letter)$ from our training dataset. This model is limited because in most cases the probability of the current letter depends not only on the previous letter.
+only on the previously occured letter ([markov assumption](https://en.wikipedia.org/wiki/Markov_property)). So, basically we will have $$p(current~letter|previous~letter)$$.
+This is a [Markov chain model](https://en.wikipedia.org/wiki/Markov_chain) (also try these [interactive visualizations](http://setosa.io/ev/markov-chains/) if you are not familiar with it). We can also estimate the probability distribution $$p(current~letter|previous~letter)$$ from our training dataset. This model is limited because in most cases the probability of the current letter depends not only on the previous letter.
 
-What we would like to model is actually $p(current~letter|all~previous~letters)$. At first, the task seems intractable as the number of previous letters is variable and it might become really large in case of long
+What we would like to model is actually $$p(current~letter|all~previous~letters)$$. At first, the task seems intractable as the number of previous letters is variable and it might become really large in case of long
 sequences. Turns out Reccurent Neural Netoworks can tackle this problem to a certain extent by using shared weights and fixed size hidden state. This leads us to a next section dedicated to RNNs.
 
 ### Recurrent Neural Networks
@@ -57,7 +57,7 @@ sequences. Turns out Reccurent Neural Netoworks can tackle this problem to a cer
 Recurrent neural networks are a family of neural networks for processing sequential data.
 Unlike feedforward neural networks, RNNs can use their internal memory to process arbitrary sequences of inputs.
 Because of arbitrary size input sequences, they are concisely depicted as a graph with a cycle (see the picture; [Source](http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/)).
-But they can be "unfolded" if the size of input sequence is known. They define a non-linear mapping from a current input $x_t$ and previous hidden state $s_{t-1}$ to the output $o_t$ and current hidden state $s_t$. Hidden state size has a predefined size and stores features which are updated on each step and affect the result of mapping.
+But they can be "unfolded" if the size of input sequence is known. They define a non-linear mapping from a current input $$x_t$$ and previous hidden state $$s_{t-1}$$ to the output $$o_t$$ and current hidden state $$s_t$$. Hidden state size has a predefined size and stores features which are updated on each step and affect the result of mapping.
 
 Now align the previous picture of the character-level language model and the ufolded RNN picture to see how
 we are using the RNN model to learn a character level language model.
@@ -190,11 +190,11 @@ from a uniform distribution. Have a look at the figure from a [relevant paper by
 
 ![png]({{ site.url }}/assets/img/sampling_temperature.png)
 
-When $\tau=1$, the distribution is not affected. If we decrease $\tau$, the distribution
-becomes more pronounced, meaning that value with bigger probability mass will have it increased. When $\tau$ will approach zero, sampling will be equivalent to armax, because the probability of that value will be close to one. When we start to icrease $\tau$ the distribution becomes more and more uniform.
+When $$\tau=1$$, the distribution is not affected. If we decrease $$\tau$$, the distribution
+becomes more pronounced, meaning that value with bigger probability mass will have it increased. When $$\tau$$ will approach zero, sampling will be equivalent to armax, because the probability of that value will be close to one. When we start to icrease $$\tau$$ the distribution becomes more and more uniform.
 
-The previous sample was generated with a temperature paramter equal to $0.5$.
-Let's see what happens when we increase it to $1.0$ and sample:
+The previous sample was generated with a temperature paramter equal to $$0.5$$.
+Let's see what happens when we increase it to $$1.0$$ and sample:
 
 ```
 Why can't we drop out of time?  
@@ -340,9 +340,9 @@ even without gpu as it is not really computationally demanding.
 ### Midi dataset
 
 Next, we will work with a [small midi dataset](http://www-etud.iro.umontreal.ca/~boulanni/icml2012) consisting
-from approximately $700$ piano songs. We have used the ```Nottingam``` piano dataset (training split only).
+from approximately $$700$$ piano songs. We have used the ```Nottingam``` piano dataset (training split only).
 
-Turns out that any midi file can be [converted to piano roll](http://nbviewer.jupyter.org/github/craffel/pretty-midi/blob/master/Tutorial.ipynb) which is just is a time-frequency matrix where each row is a different MIDI pitch and each column is a different slice in time. So each piano song from our dataset will be represented as a matrix of size $88\times song\_length$, where $88$ is a number of pitches of the piano. Here is an example of
+Turns out that any midi file can be [converted to piano roll](http://nbviewer.jupyter.org/github/craffel/pretty-midi/blob/master/Tutorial.ipynb) which is just is a time-frequency matrix where each row is a different MIDI pitch and each column is a different slice in time. So each piano song from our dataset will be represented as a matrix of size $$88\times song\_length$$, where $$88$$ is a number of pitches of the piano. Here is an example of
 piano roll matrix:
 
 ![png]({{ site.url }}/assets/img/piano_roll_2.png)
@@ -354,9 +354,9 @@ with a certain pitch for a certian period of time, we will see a horizontal line
 similar to [piano tutorials on youtube](![alt text](sampling_temperature.png "Logo Title Text 1").
 
 Now, let's try to see the similarities between the character-level model and our new task. In the current case, we will have to predict the pitches that will be played on the next timestep, given all the previously played
-pitches. So, if you look at the picture of the piano roll, each column represents some kind of a musical character and given all the previous musical characters, we want to predict the next one. Let's pay attention to the difference between a text character and a musical character. If you recall, each character in our language model was represented by one-hot vector (meaning that only one value in our vector is $1$ and others are $0$).
+pitches. So, if you look at the picture of the piano roll, each column represents some kind of a musical character and given all the previous musical characters, we want to predict the next one. Let's pay attention to the difference between a text character and a musical character. If you recall, each character in our language model was represented by one-hot vector (meaning that only one value in our vector is $$1$$ and others are $$0$$).
 For music character multiple keys can be pressed at one timestep (since we are working with polyphonic dataset).
-In this case, each timestep will be represented by a vector which can contain more than one $1$.
+In this case, each timestep will be represented by a vector which can contain more than one $$1$$.
 
 
 
@@ -367,7 +367,7 @@ to account for different input that we discussed in the previous section. In the
 we had one-hot encoded tensor (character) as an input on each timestep and one-hot encoded tensor as output (predicted next character). As we had to make a single exlusive choice for predicted next character, we used
 [cross-entropy loss](https://rdipietro.github.io/friendly-intro-to-cross-entropy-loss/).
 
-But now our model outputs a vector which is no longer one-hot encoded (multiple keys can be pressed). Of course, we can treat all possible combinations of pressed keys as a separate class, but this is intractable. Instead, we will treat each element of the output vector as a binary variable ($1$ -- pressing, $0$ -- not pressing a key). We will define a separate loss
+But now our model outputs a vector which is no longer one-hot encoded (multiple keys can be pressed). Of course, we can treat all possible combinations of pressed keys as a separate class, but this is intractable. Instead, we will treat each element of the output vector as a binary variable ($$1$$ -- pressing, $$0$$ -- not pressing a key). We will define a separate loss
 for each element of the output vector to be binary cross-entropy. And our final loss will be an averaged sum of these binary cross-entropies. You can also read the code to get a better understanding.
 
 After making the aforementioned changes, we trained our model. In the next section, we will perform sampling
@@ -408,7 +408,7 @@ First one is a [truncated back propagation](https://www.quora.com/Whats-the-key-
 them as separate batches with an exception that we process these batches in the order of split and every next batch uses hidden state of previous batch as an initial hidden state. We also provide an implementation of this approach, so that you can get the better understanding. This approach is obviously not an exact equivalent of processing the whole sequence but it makes more frequent updates and consumes less memory. On the other hand, there is a chance that we might not be able to capture long-term dependencies that span beyond the length of one subsequence.
 
 Second one is [gradient checkpointing](https://medium.com/@yaroslavvb/fitting-larger-networks-into-memory-583e3c758ff9). This method gives us a possibilty to use less memory while training our model on the whole sequence on the expence of performing more computation. If you recall, previously we mentioned that the most memory during
-training is occupied by activations. The idea of gradient checkpointing consists of storing only every $n$-th activation and recomputing the unsaved activations later. This method is already [implemented in Tensorflow](https://github.com/openai/gradient-checkpointing) and [being implemented in Pytorch](https://github.com/pytorch/pytorch/pull/4594).
+training is occupied by activations. The idea of gradient checkpointing consists of storing only every $$n$$-th activation and recomputing the unsaved activations later. This method is already [implemented in Tensorflow](https://github.com/openai/gradient-checkpointing) and [being implemented in Pytorch](https://github.com/pytorch/pytorch/pull/4594).
 
 
 
