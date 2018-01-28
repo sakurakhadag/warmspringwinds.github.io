@@ -25,7 +25,8 @@ making it possible for us to sample songs conditioned on artist.
 And finally, we conclude by training our model on midi dataset of piano songs.
 While solving all these tasks, we will briefly explore some interesting concepts related to RNN
 training and inference like character-level RNN, conditional character-level RNN,
-sampling from RNN, truncated backpropagation through time and gradient checkpointing.
+sampling from RNN, truncated backpropagation through time and gradient checkpointing. All the code and
+trained models are available on [github](https://github.com/warmspringwinds/pytorch-rnn-sequence-generation-classification) and were implemented in [Pytorch](http://pytorch.org/).
 
 
 ### Character-Level language model
