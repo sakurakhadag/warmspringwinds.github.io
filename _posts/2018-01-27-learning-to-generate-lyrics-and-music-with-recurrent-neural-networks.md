@@ -63,9 +63,9 @@ But they can be "unfolded" if the size of input sequence is known. They define a
 Now align the previous picture of the character-level language model and the ufolded RNN picture to see how
 we are using the RNN model to learn a character level language model.
 
-While the picture depicts the Vanilla RNN, we will use LSTM in our work as it is easier to train usually achieves better results.
+While the picture depicts the Vanilla RNN, we will use LSTM in our work as it is easier to train and usually achieves better results.
 
-For a more elaborate introduction to RNNs, we refer reader to the [following resource](http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/).
+For a more elaborate introduction to RNNs, we refer the reader to the [following resource](http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/).
 
 ### Lyrics dataset
 
