@@ -154,7 +154,7 @@ Let's try to sample a couple of songs after training our model. Basically, on ea
 step our RNN will output logits and we can softmax them and sample from that distribution.
 Or we can use Gumble-Max trick and [sample using logits directly](https://hips.seas.harvard.edu/blog/2013/04/06/the-gumbel-max-trick-for-discrete-distributions/) which is equivalent.
 
-One intersting thing about sampling is that we can partially define the input sequence ourselves and start sampling
+One interesting thing about sampling is that we can partially define the input sequence ourselves and start sampling
 with that initial condition. For example, we can sample a song that starts with "Why":
 
 ```
@@ -192,9 +192,9 @@ from a uniform distribution. Have a look at the figure from a [relevant paper by
 ![png]({{ site.url }}/assets/img/sampling_temperature.png)
 
 When $$\tau=1$$, the distribution is not affected. If we decrease $$\tau$$, the distribution
-becomes more pronounced, meaning that value with bigger probability mass will have it increased. When $$\tau$$ will approach zero, sampling will be equivalent to armax, because the probability of that value will be close to one. When we start to icrease $$\tau$$ the distribution becomes more and more uniform.
+becomes more pronounced, meaning that value with bigger probability mass will have it increased. When $$\tau$$ will approach zero, sampling will be equivalent to armax, because the probability of that value will be close to one. When we start to increase $$\tau$$ the distribution becomes more and more uniform.
 
-The previous sample was generated with a temperature paramter equal to $$0.5$$.
+The previous sample was generated with a temperature parameter equal to $$0.5$$.
 Let's see what happens when we increase it to $$1.0$$ and sample:
 
 ```
@@ -245,7 +245,7 @@ tensor which will represent the artist. So on each step the RNN will accept one 
 
 ### Sampling from conditional language model RNN
 
-After training, we sampled a couple of songs conditined on artist.
+After training, we sampled a couple of songs conditioned on artist.
 Below you can find some results.
 
 Him:
@@ -400,7 +400,7 @@ Now let's look at our problem from the gpu memory consumption and speed point of
 
 We greatly speed up computation by processing our sequences in batches. At the same time, as
 our sequences become longer (depending on the dataset), our max batch size starts to decrease.
-Why is it a case? As we use backpropagation to compute gradients, we need to store all the intermediate acitvations, which contribute the most to the memory consumption. As our sequence becomes longer, we need to store more activations, therefore, we can fit less examples in our batch.
+Why is it a case? As we use backpropagation to compute gradients, we need to store all the intermediate activations, which contribute the most to the memory consumption. As our sequence becomes longer, we need to store more activations, therefore, we can fit less examples in our batch.
 
 Sometimes, we either have to work with really long sequences or we want to increase our batch size or maybe you just have a gpu with small amount of memory available. There are multiple possible solutions to reduce memory
 consumption in this case, but we will mention two, which will have different trade-offs.
@@ -408,7 +408,7 @@ consumption in this case, but we will mention two, which will have different tra
 First one is a [truncated back propagation](https://www.quora.com/Whats-the-key-difference-between-backprop-and-truncated-backprop-through-time#sLRGO). The idea is to split the whole sequence into subsequences and treat
 them as separate batches with an exception that we process these batches in the order of split and every next batch uses hidden state of previous batch as an initial hidden state. We also provide an implementation of this approach, so that you can get the better understanding. This approach is obviously not an exact equivalent of processing the whole sequence but it makes more frequent updates and consumes less memory. On the other hand, there is a chance that we might not be able to capture long-term dependencies that span beyond the length of one subsequence.
 
-Second one is [gradient checkpointing](https://medium.com/@yaroslavvb/fitting-larger-networks-into-memory-583e3c758ff9). This method gives us a possibilty to use less memory while training our model on the whole sequence on the expence of performing more computation. If you recall, previously we mentioned that the most memory during
+Second one is [gradient checkpointing](https://medium.com/@yaroslavvb/fitting-larger-networks-into-memory-583e3c758ff9). This method gives us a possibilty to use less memory while training our model on the whole sequence on the expense of performing more computation. If you recall, previously we mentioned that the most memory during
 training is occupied by activations. The idea of gradient checkpointing consists of storing only every $$n$$-th activation and recomputing the unsaved activations later. This method is already [implemented in Tensorflow](https://github.com/openai/gradient-checkpointing) and [being implemented in Pytorch](https://github.com/pytorch/pytorch/pull/4594).
 
 
